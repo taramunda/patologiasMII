@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST TRANSPORTE - Parcial (Examen 14/05/2021)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .answers label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .result {
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Examen 14/05/2021 - Transporte Parcial 2</h1>
+        <form id="quizForm">
+            <div class="question" id="q1">
+                <h3>1. Indicad a qué tipo de control se refiere la siguiente afirmación: Lo realiza el proyectista.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q1" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q1" value="Control de Producción"> Control de Producción</label>
+                    <label><input type="radio" name="q1" value="Control de Recepción"> Control de Recepción</label>
+                </div>
+                <div class="result" id="result-q1"></div>
+            </div>
+            <div class="question" id="q2">
+                <h3>2. Indicad a qué tipo de control se refiere la siguiente afirmación: Utiliza técnicas de control por lotes.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q2" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q2" value="Control de Producción"> Control de Producción</label>
+                    <label><input type="radio" name="q2" value="Control de Recepción"> Control de Recepción</label>
+                </div>
+                <div class="result" id="result-q2"></div>
+            </div>
+            <div class="question" id="q3">
+                <h3>3. Indicad a qué agente se refiere la siguiente afirmación: Reporta al constructor.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q3" value="OCT"> OCT</label>
+                    <label><input type="radio" name="q3" value="ECC"> ECC</label>
+                    <label><input type="radio" name="q3" value="NS/NC"> NS/NC</label>
+                </div>
+                <div class="result" id="result-q3"></div>
+            </div>
+            <div class="question" id="q4">
+                <h3>4. Indicad a qué agente se refiere la siguiente afirmación: Los resultados del control son informes UNESPA.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q4" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q4" value="ECC"> ECC</label>
+                    <label><input type="radio" name="q4" value="OCT"> OCT</label>
+                </div>
+                <div class="result" id="result-q4"></div>
+            </div>
+            <div class="question" id="q5">
+                <h3>5. Si un error de proyecto se produce como consecuencia de una escasa preparación del técnico que lo realiza, ¿de qué tipo de defecto se trata?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q5" value="Defecto controlable por el operador"> Defecto controlable por el operador</label>
+                    <label><input type="radio" name="q5" value="Defecto de dirección"> Defecto de dirección</label>
+                    <label><input type="radio" name="q5" value="NS/NC"> NS/NC</label>
+                </div>
+                <div class="result" id="result-q5"></div>
+            </div>
+            <div class="question" id="q6">
+                <h3>6. ¿Cuál de los siguientes agentes es el responsable de elaborar la documentación de obra ejecutada?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q6" value="Director de ejecución de obra"> Director de ejecución de obra</label>
+                    <label><input type="radio" name="q6" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q6" value="Constructor"> Constructor</label>
+                    <label><input type="radio" name="q6" value="Proyectista"> Proyectista</label>
+                    <label><input type="radio" name="q6" value="Director de obra"> Director de obra</label>
+                </div>
+                <div class="result" id="result-q6"></div>
+            </div>
+            <div class="question" id="q7">
+                <h3>7. ¿Cuál de las siguientes actividades ha implementado antes el Control de Calidad?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q7" value="Mantenimiento"> Mantenimiento</label>
+                    <label><input type="radio" name="q7" value="Proyecto"> Proyecto</label>
+                    <label><input type="radio" name="q7" value="Ejecución"> Ejecución</label>
+                    <label><input type="radio" name="q7" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q7" value="Fabricación"> Fabricación</label>
+                </div>
+                <div class="result" id="result-q7"></div>
+            </div>
+            <div class="question" id="q8">
+                <h3>8. Indique si es verdadera o falsa la siguiente afirmación: El Control de Producción y el Control de Recepción deben de ser independientes pero complementarios para optimizar el proceso de control.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q8" value="Verdadero"> Verdadero</label>
+                    <label><input type="radio" name="q8" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q8" value="Falso"> Falso</label>
+                </div>
+                <div class="result" id="result-q8"></div>
+            </div>
+            <div class="question" id="q9">
+                <h3>9. ¿Qué agente no suscribe el acta de recepción de obra?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q9" value="Proyectista"> Proyectista</label>
+                    <label><input type="radio" name="q9" value="Constructor"> Constructor</label>
+                    <label><input type="radio" name="q9" value="Todos suscriben el acta de recepción de obra"> Todos suscriben el acta de recepción de obra</label>
+                    <label><input type="radio" name="q9" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q9" value="Promotor"> Promotor</label>
+                </div>
+                <div class="result" id="result-q9"></div>
+            </div>
+            <div class="question" id="q10">
+                <h3>10. ¿En cuál de las siguientes actividades se produce el mayor número de fallos o errores?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q10" value="Ejecución"> Ejecución</label>
+                    <label><input type="radio" name="q10" value="NS/NC"> NS/NC</label>
+                    <label><input type="radio" name="q10" value="Proyecto"> Proyecto</label>
+                    <label><input type="radio" name="q10" value="Mantenimiento"> Mantenimiento</label>
+                    <label><input type="radio" name="q10" value="Fabricación"> Fabricación</label>
+                </div>
+                <div class="result" id="result-q10"></div>
+            </div>
+            <div class="question" id="q11">
+                <h3>11. ¿Cuál de los siguientes agentes no es un agente LOE?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q11" value="Seguro"> Seguro</label>
+                    <label><input type="radio" name="q11" value="Todos son agentes LOE"> Todos son agentes LOE</label>
+                    <label><input type="radio" name="q11" value="OCT"> OCT</label>
+                    <label><input type="radio" name="q11" value="Propietario"> Propietario</label>
+                    <label><input type="radio" name="q11" value="NS/NC"> NS/NC</label>
+                </div>
+                <div class="result" id="result-q11"></div>
+            </div>
+            <div class="question" id="q12">
+                <h3>12. Durante la ejecución de una obra, el control de producción se refiere al control llevado a cabo por el constructor y debe ser realizado por personal de la propia constructora.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q12" value="Falso"> Falso</label>
+                    <label><input type="radio" name="q12" value="Verdadero"> Verdadero</label>
+                </div>
+                <div class="result" id="result-q12"></div>
+            </div>
+            <div class="question" id="q13">
+                <h3>13. Durante la realización de un proyecto, el control de producción se refiere al control llevado a cabo por el proyectista y puede ser realizado por una empresa externa.</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q13" value="Falso"> Falso</label>
+                    <label><input type="radio" name="q13" value="Verdadero"> Verdadero</label>
+                </div>
+                <div class="result" id="result-q13"></div>
+            </div>
+            <div class="question" id="q14">
+                <h3>14. En la siguiente imagen se muestra un siniestro ocurrido en una construcción. ¿Qué agente estaría siempre exento de responsabilidad?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q14" value="El proyectista"> El proyectista</label>
+                    <label><input type="radio" name="q14" value="La Entidad de Control de Calidad"> La Entidad de Control de Calidad</label>
+                    <label><input type="radio" name="q14" value="El usuario"> El usuario</label>
+                    <label><input type="radio" name="q14" value="El constructor"> El constructor</label>
+                    <label><input type="radio" name="q14" value="Todos pueden tener responsabilidad en el siniestro"> Todos pueden tener responsabilidad en el siniestro</label>
+                </div>
+                <div class="result" id="result-q14"></div>
+            </div>
+            <div class="question" id="q15">
+                <h3>15. En la siguiente imagen se muestra un siniestro ocurrido en una construcción. ¿Qué agente estaría siempre exento de responsabilidad?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q15" value="Todos pueden tener responsabilidad en el siniestro"> Todos pueden tener responsabilidad en el siniestro</label>
+                    <label><input type="radio" name="q15" value="El constructor"> El constructor</label>
+                    <label><input type="radio" name="q15" value="El propietario"> El propietario</label>
+                    <label><input type="radio" name="q15" value="El usuario"> El usuario</label>
+                    <label><input type="radio" name="q15" value="La Entidad de Control de Calidad"> La Entidad de Control de Calidad</label>
+                    <label><input type="radio" name="q15" value="El proyectista"> El proyectista</label>
+                </div>
+                <div class="result" id="result-q15"></div>
+            </div>
+        </form>
+        <a href="index.html" class="button">Inicio</a>
+        <div id="finalResult" class="result"></div>
+    </div>
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'Control de Producción',
+                q2: 'Control de Recepción',
+                q3: 'ECC',
+                q4: 'OCT',
+                q5: 'Defecto de dirección',
+                q6: 'Director de obra',
+                q7: 'Fabricación',
+                q8: 'Verdadero',
+                q9: 'Proyectista',
+                q10: 'Proyecto',
+                q11: 'OCT',
+                q12: 'Falso',
+                q13: 'Verdadero',
+                q14: 'El usuario',
+                q15: 'Todos pueden tener responsabilidad en el siniestro',
+            };
+
+            let score = 0;
+            let correct = 0;
+            let incorrect = 0;
+            let unanswered = 0;
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+
+            for (let question in correctAnswers) {
+                const questionDiv = document.getElementById(question);
+                const resultDiv = document.getElementById(`result-${question}`);
+                const answer = formData.get(question);
+
+                if (!answer) {
+                    unanswered++;
+                    questionDiv.classList.remove('correct', 'incorrect');
+                    resultDiv.innerHTML = `<p class="incorrect">No respondida. Respuesta correcta: ${correctAnswers[question]}</p>`;
+                } else if (answer === correctAnswers[question]) {
+                    score += 1;
+                    correct++;
+                    questionDiv.classList.add('correct');
+                    questionDiv.classList.remove('incorrect');
+                    resultDiv.innerHTML = `<p class="correct">Correcto</p>`;
+                } else {
+                    score -= 0.5;
+                    incorrect++;
+                    questionDiv.classList.add('incorrect');
+                    questionDiv.classList.remove('correct');
+                    resultDiv.innerHTML = `<p class="incorrect">Incorrecto. Respuesta correcta: ${correctAnswers[question]}</p>`;
+                }
+            }
+
+            const finalScore = Math.max(0, (score / Object.keys(correctAnswers).length) * 10).toFixed(2);
+            const finalResultDiv = document.getElementById('finalResult');
+            finalResultDiv.innerHTML = `<p>Nota: ${finalScore} / 10</p>
+                                        <p>Correctas: ${correct}</p>
+                                        <p>Incorrectas: ${incorrect}</p>
+                                        <p>No respondidas: ${unanswered}</p>`;
+        }
